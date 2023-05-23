@@ -1,0 +1,56 @@
+.container .card {
+    width: 77vw;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+body{
+    background-image: linear-gradient(to right,#cdffe8, #94b9ff);
+    height: 200%;
+}
+
+.card .card-title {
+    background-color: white;
+    display: flex;
+    
+    align-items: center;
+    border: 2px black solid;
+    border-radius: 10px;
+    height: 50px;
+    width: 60vw;
+    /* margin-left: 1vw; */
+    /* margin: 0px 23px; */
+    padding: 0px 15px;
+    justify-content: space-between;
+}
+.card .card-body{
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 5px 15px;
+    width: 60vw;
+}
+
+.join-btn{
+    background-color: pink;
+    color: black;
+    border: solid black;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 19px;
+
+}
+
+.card .card-body .details-btn{
+    background-color: lightgray;
+    color: black;
+    border: solid black;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left:605px;
+
+}
+

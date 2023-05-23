@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/media/landing.css">
+    <link rel="stylesheet" href="/media/textstyle.css">
+    <link rel="stylesheet" href="/media/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="head" style="height: 60px">
+        <a href="#" class="brand">ZENITH</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <input class="search_bar" type="text" placeholder="Search">
+                <a href="{% url 'your_clubs' %}"><b>Home</b></a>
+                <a href="{% url 'all_clubs' %}"><b>Clubs</b></a>
+                <a href=""><b>Events</b></a>
+                <a href="" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                <!-- <a href="#">Events</a> -->
+            </div>
+        </div>
+    </header>
+    <div class="container" style="height: 200%;">
+        <div class="section" style="height: 22vh;">
+            <br>
+            <h2>Your Clubs: </h2>
+        </div>
+        {% if user_clubs is null %}
+        <div class="content">
+            <h3>You havent joined any club yet!!! </h3>
+            <button>JOIN CLUBS</button>
+        </div>
+        {%endif%}
+        {% for club in user_clubs %}
+        <div class="card">
+                <div class="card-title"
+                    style="font-family:Arial, Helvetica, sans-serif; text-align:left;">
+                    <h4>{{club.club_name}} - {{club.club_locality}} </h4> <button class="joined-btn"> JOINED </button>
+                </div>
+                <div class="card-body">
+                    <b>Upcoming Events : </b>
+                    <br>
+                    {%for event in club.club_events.all %}
+                    {{event}} <span style="float:right;">Date: {{event.event_date}}</span><br>
+                    {%endfor%}
+                </div>
+        </div>
+        <br>
+    {% endfor %}
+    </div>    
+</body>
+
+</html>
